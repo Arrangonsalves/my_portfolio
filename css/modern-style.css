@@ -1,0 +1,703 @@
+/* Modern Style Overrides - No Glassmorphism */
+
+:root {
+    /* Dark Mode (Default) */
+    --bg-color: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent: #64ffda;
+    /* Cyan for primary accents */
+    --accent-secondary: #5739ff;
+    /* Purple-blue for secondary accents (original template color) */
+    --card-bg: #0a0a0a;
+    /* Very dark grey for contrast */
+    --nav-bg: #000000;
+    /* Solid black */
+    --border-color: #333333;
+    --font-main: 'Poppins', sans-serif;
+}
+
+[data-theme="light"] {
+    --bg-color: #f0f2f5;
+    --text-primary: #1d1d1f;
+    --text-secondary: #424245;
+    --accent: #0071e3;
+    /* Classic blue for light mode */
+    --accent-secondary: #0071e3;
+    /* Same as primary accent in light mode */
+    --card-bg: #ffffff;
+    --nav-bg: #ffffff;
+    --border-color: #d1d1d6;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar - Solid Background */
+.ftco_navbar {
+    background: var(--nav-bg) !important;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ftco_navbar .navbar-brand {
+    color: var(--accent) !important;
+}
+
+.ftco_navbar .nav-link span {
+    color: var(--text-primary) !important;
+}
+
+.ftco_navbar .nav-link:hover span {
+    color: var(--accent) !important;
+}
+
+/* Hero Section */
+/* Removed dimming for cleaner look */
+
+.hero h1 {
+    color: var(--text-primary);
+}
+
+.hero h1 span {
+    color: var(--accent-secondary) !important;
+    /* Blue for name - matching "Hello!" */
+}
+
+/* More specific override for slider text */
+.slider-text h1 span,
+.owl-carousel .slider-text h1 span {
+    color: var(--accent-secondary) !important;
+    /* Blue for name */
+}
+
+.hero .subheading {
+    color: var(--accent-secondary) !important;
+    /* Blue for "Hello!" */
+}
+
+/* Buttons - High Visibility (Filled) & Glitch Effect */
+.btn-primary {
+    background: var(--accent) !important;
+    border: 2px solid var(--accent) !important;
+    color: #000000 !important;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.btn-primary:hover {
+    background: var(--accent) !important;
+    /* Keep filled */
+    color: #000000 !important;
+    box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+    transform: scale(1.05);
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+    /* Sheen effect */
+}
+
+.btn-white {
+    background: var(--text-primary) !important;
+    color: var(--bg-color) !important;
+    border: none !important;
+}
+
+/* About Section */
+.ftco-about {
+    background-color: var(--bg-color);
+}
+
+.about-info span {
+    color: var(--text-secondary);
+}
+
+.about-info .title-s {
+    color: var(--accent-secondary);
+    /* Blue for labels like "Name:", "Job Role:" */
+    font-weight: 600;
+}
+
+/* Skills */
+.progress {
+    background-color: var(--border-color);
+}
+
+.progress-bar {
+    background-color: var(--accent-secondary);
+    /* Blue for progress bars */
+}
+
+/* Resume/Experience Cards - Solid Background */
+.resume-wrap {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.resume-wrap:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+}
+
+.resume-wrap h2 {
+    color: var(--text-primary);
+}
+
+.resume-wrap .date {
+    color: var(--accent-secondary) !important;
+    /* Blue for dates */
+}
+
+.resume-wrap .position {
+    color: var(--accent-secondary);
+    /* Blue for position/company names */
+}
+
+/* Projects */
+.blog-entry {
+    background: transparent;
+}
+
+.blog-entry .text {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.blog-entry .heading a {
+    color: var(--text-primary);
+}
+
+.blog-entry .heading a:hover {
+    color: var(--accent);
+}
+
+/* Contact */
+.contact-section .box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.contact-section .icon span {
+    color: var(--accent);
+}
+
+/* Counter Section - Light Mode Fix */
+.ftco-counter {
+    background-color: var(--card-bg) !important;
+}
+
+.ftco-counter .block-18 {
+    background: var(--card-bg);
+}
+
+/* Hireme Section - Light Mode Fix */
+.ftco-hireme {
+    background-color: var(--accent-secondary) !important;
+    /* Blue background for both modes */
+}
+
+.ftco-hireme h2 {
+    color: #ffffff !important;
+}
+
+.ftco-hireme h2 span {
+    color: var(--accent) !important;
+    /* Cyan for "Github" */
+}
+
+.ftco-hireme h4 {
+    color: #ffffff !important;
+}
+
+/* Footer */
+.ftco-footer {
+    background-color: var(--nav-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Footer Social Icons - Levitate & Pulse */
+.ftco-footer-social li a {
+    background: var(--accent);
+    color: #000000 !important;
+    border: 2px solid var(--accent);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
+}
+
+.ftco-footer-social li a:hover {
+    background: var(--accent);
+    /* Keep filled */
+    color: #000000 !important;
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.4);
+    /* Floating shadow */
+    transform: translateY(-10px) scale(1.1);
+    /* Levitate up */
+}
+
+.ftco-footer-social li a span {
+    color: inherit !important;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+}
+
+.heading-section h1.big {
+    color: var(--border-color);
+    opacity: 0.2;
+}
+
+.heading-section h2 {
+    color: var(--text-primary);
+}
+
+.heading-section .subheading {
+    color: var(--accent-secondary);
+    /* Blue for subheadings */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 10px;
+    border: 3px solid var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent);
+}
+
+/* --- Theme Toggle Button --- */
+#theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    /* Moved to bottom to avoid name overlap */
+    left: 30px;
+    z-index: 9999;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+    border-color: var(--accent);
+}
+
+#theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-primary);
+    transition: transform 0.5s ease;
+}
+
+/* Sun/Moon Animation */
+.sun-icon {
+    display: none;
+}
+
+.moon-icon {
+    display: block;
+}
+
+[data-theme="light"] .sun-icon {
+    display: block;
+    animation: rotateIn 0.5s ease-out;
+}
+
+[data-theme="light"] .moon-icon {
+    display: none;
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-90deg) scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* --- Force Theme-Aware Text Colors --- */
+/* Override any hardcoded white text from style.css */
+
+/* Hero Section - Critical Fix */
+.hero h1 {
+    color: var(--text-primary) !important;
+}
+
+/* Name color is handled above in Hero Section */
+
+/* Typing Animation */
+#typing-animation {
+    color: var(--text-primary) !important;
+}
+
+/* Button Text - Critical Fix */
+.btn-white {
+    background: var(--text-primary) !important;
+    color: var(--bg-color) !important;
+    border: 2px solid var(--text-primary) !important;
+}
+
+.btn-white:hover {
+    background: var(--bg-color) !important;
+    color: var(--text-primary) !important;
+    border: 2px solid var(--text-primary) !important;
+}
+
+/* Outline button fix - even higher specificity */
+.btn.btn-white.btn-outline-white {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    border: 2px solid var(--text-primary) !important;
+}
+
+.btn.btn-white.btn-outline-white:hover {
+    background: var(--text-primary) !important;
+    color: var(--bg-color) !important;
+    border: 2px solid var(--text-primary) !important;
+}
+
+/* All text elements */
+p,
+span,
+li,
+a,
+div {
+    color: var(--text-primary);
+}
+
+/* Ensure links maintain proper color */
+a:not(.btn):not(.navbar-brand) {
+    color: var(--text-primary);
+}
+
+a:not(.btn):not(.navbar-brand):hover {
+    color: var(--accent);
+}
+
+/* Blog/Project text */
+.blog-entry .text p,
+.blog-entry .text h3,
+.blog-entry .text span {
+    color: var(--text-primary) !important;
+}
+
+/* Resume section text */
+.resume-wrap p,
+.resume-wrap span,
+.resume-wrap li {
+    color: var(--text-primary) !important;
+}
+
+/* Contact section */
+.contact-section p,
+.contact-section h3,
+.contact-section span {
+    color: var(--text-primary) !important;
+}
+
+/* Counter section */
+.counter-wrap .text span,
+.counter-wrap .text strong {
+    color: var(--text-primary) !important;
+}
+
+/* About section */
+.about-info p,
+.about-info span {
+    color: var(--text-primary) !important;
+}
+
+/* Footer text */
+.ftco-footer p,
+.ftco-footer span,
+.ftco-footer li {
+    color: var(--text-primary) !important;
+}
+
+/* Ensure normal-txt class uses theme color */
+.normal-txt {
+    color: var(--text-primary) !important;
+}
+
+/* Responsive Design Overrides */
+
+@media (max-width: 1199.98px) {
+    .heading-section h1.big {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    /* Tablet & Smaller Laptops */
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero .subheading {
+        font-size: 16px;
+    }
+
+    .ftco_navbar .navbar-nav {
+        background: var(--nav-bg);
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 10px;
+        border: 1px solid var(--border-color);
+    }
+
+    .ftco-section {
+        padding: 4rem 0;
+    }
+
+    .about-img {
+        margin-bottom: 30px;
+    }
+
+    .resume-wrap {
+        margin-bottom: 20px;
+    }
+
+    .heading-section h1.big {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Mobile Devices */
+
+    body {
+        font-size: 15px;
+    }
+
+    /* Reduce horizontal padding on containers for more content space */
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Hero Section */
+    .hero-wrap .slider-text .text {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .hero .subheading {
+        letter-spacing: 2px;
+    }
+
+    #typing-animation {
+        font-size: 20px;
+    }
+
+    /* Buttons */
+    .btn.py-3 {
+        padding-top: 0.7rem !important;
+        padding-bottom: 0.7rem !important;
+    }
+
+    /* About Section */
+    .img-about {
+        margin-bottom: 30px;
+    }
+
+    .about-info .title-s {
+        min-width: 90px;
+        display: inline-block;
+    }
+
+    /* Project Cards */
+    .project-section .col-md-4 {
+        margin-bottom: 30px;
+    }
+
+    .blog-entry {
+        margin-bottom: 30px;
+    }
+
+    /* Contact Box */
+    .contact-section .box {
+        margin-bottom: 20px;
+    }
+
+    /* Heading adjustments */
+    .heading-section h2 {
+        font-size: 24px;
+    }
+
+    .heading-section h1.big {
+        font-size: 40px;
+        top: -10px;
+    }
+
+    .display-1,
+    .display-2,
+    .display-3,
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    /* Resume padding */
+    .resume-wrap {
+        padding: 20px;
+    }
+
+    /* Footer */
+    .ftco-footer {
+        padding: 3rem 0;
+    }
+
+    /* Theme Toggle Position for Mobile */
+    #theme-toggle {
+        bottom: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Navbar Adjustment */
+    .navbar-brand {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    /* Small Mobile Phones */
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-wrap .slider-text .text .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    /* Counter Section */
+    .block-18 {
+        margin-bottom: 20px;
+    }
+
+    .ftco-counter .col-md {
+        margin-bottom: 20px;
+    }
+}
+
+/* --- Visual Enhancements --- */
+
+/* 1. Scroll Progress Bar */
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 99999;
+    background: transparent;
+}
+
+#progress-bar {
+    height: 4px;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.1s;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+/* 2. Glassmorphism for Cards (Projects & Resume) */
+/* Only apply if not on mobile for performance, or lightweight version */
+@media (min-width: 992px) {
+
+    .blog-entry .text,
+    .resume-wrap,
+    .contact-section .box {
+        background: rgba(10, 10, 10, 0.7) !important;
+        /* Semi-transparent dark */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="light"] .blog-entry .text,
+    [data-theme="light"] .resume-wrap,
+    [data-theme="light"] .contact-section .box {
+        background: rgba(255, 255, 255, 0.7) !important;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* 3. Tilt Effect Prerequisite Styles */
+.js-tilt-glare {
+    border-radius: 8px;
+}
