@@ -591,6 +591,19 @@ a:not(.btn):not(.navbar-brand):hover {
     .hero-wrap .slider-text .text {
         padding-left: 0;
         text-align: center;
+        z-index: 2;
+        /* Keep text above avatar */
+    }
+
+    .hero .one-third {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        /* Wash out the avatar behind text so it's readable */
+        z-index: 1;
     }
 
     .hero h1 {
