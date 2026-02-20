@@ -87,15 +87,13 @@
 			animation: typing 3s steps(20, end) infinite;
 		}
 
-		#typing-animation:before {
-			content: "";
-			/* position: absolute; */
-			top: 0;
-			left: 0;
-			width: 0;
-			height: 100%;
-			background-color: #cccccc;
-			animation: typing-cursor 0.5s ease-in-out infinite;
+		#typing-animation:after {
+			content: "|";
+			position: absolute;
+			right: -10px;
+			color: #64ffda;
+			/* match accent color */
+			animation: typing-cursor 0.8s step-end infinite;
 		}
 
 		@keyframes typing {
@@ -109,12 +107,14 @@
 		}
 
 		@keyframes typing-cursor {
-			from {
-				width: 5px;
+
+			0%,
+			100% {
+				opacity: 1;
 			}
 
-			to {
-				width: 0;
+			50% {
+				opacity: 0;
 			}
 		}
 
@@ -133,15 +133,18 @@
 		/* Avatar Animation */
 		@keyframes avatarFloat {
 			0% {
-				transform: translateY(0px);
+				transform: translateY(0px) scale(1);
+				filter: drop-shadow(0 5px 15px rgba(100, 255, 218, 0.4));
 			}
 
 			50% {
-				transform: translateY(-15px);
+				transform: translateY(-20px) scale(1.02);
+				filter: drop-shadow(0 15px 25px rgba(100, 255, 218, 0.6));
 			}
 
 			100% {
-				transform: translateY(0px);
+				transform: translateY(0px) scale(1);
+				filter: drop-shadow(0 5px 15px rgba(100, 255, 218, 0.4));
 			}
 		}
 
@@ -276,7 +279,8 @@
 
 
 
-	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section" data-aos="fade-up"
+		data-aos-duration="1000">
 		<div class="container">
 			<div class="row">
 				<div class="row d-flex align-items-stretch">
@@ -400,7 +404,7 @@
 
 
 
-	<section class="ftco-section ftco-no-pb" id="resume-section">
+	<section class="ftco-section ftco-no-pb" id="resume-section" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="row justify-content-center pb-5">
 				<div class="col-md-10 heading-section text-center ftco-animate">
@@ -559,7 +563,7 @@
 
 
 
-	<section class="ftco-section" id="project-section">
+	<section class="ftco-section" id="project-section" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-5">
 				<div class="col-md-7 heading-section text-center ftco-animate">
@@ -648,7 +652,8 @@
 		</div>
 	</section>
 
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter" data-aos="fade-in"
+		data-aos-duration="1200">
 		<div class="container">
 			<div class="row d-md-flex align-items-center">
 				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
@@ -704,7 +709,8 @@
 
 
 
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+	<section class="ftco-section contact-section ftco-no-pb" id="contact-section" data-aos="fade-up"
+		data-aos-duration="1000">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-md-7 heading-section text-center ftco-animate">
